@@ -1,35 +1,39 @@
-
 $(document).ready(function() {
 $("form#number").submit(function(event){
   event.preventDefault();
   var number=parseInt($("input#number1").val());
   var res =ping(number);
-  $("#res").text(res);
+  //$("#result").text(res);
+  //console.log(res);
+  $(".result").text(res);
+  /*$(".result").click(function(){
+     ("#display").show();
+     ("#display").text(res);
 
+   });*/
+});
 
 });
-});
-
 
 function ping(number){
 
   if(number % 3 == 0)
   {
 
-  document.write("Ping!");
+  return "Ping!";
 
   }
 
   else if (number % 5 == 0) {
 
-    document.write("Pong!");
+    return "Pong!";
   }
   else if (number % 15 == 0) {
 
-    ocument.write("PingPong!");
+    return "PingPong!";
   }
   else {
 
-    			document.write("Not pingpong ");
+          return "Not pingpong";
   }
 }
